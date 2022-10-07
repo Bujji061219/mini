@@ -1,13 +1,22 @@
 .login-container {
-  background-image: url('https://res.cloudinary.com/ddry7fpzp/image/upload/v1662287541/netfilx_1_vrjxch.png');
-  background-size: cover;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: #131313;
+  margin: auto;
 }
-.form-container {
+
+@media screen and (min-width: 768px) {
+  .login-container {
+    background-image: url('https://res.cloudinary.com/ddry7fpzp/image/upload/v1662287541/netfilx_1_vrjxch.png');
+    background-size: cover;
+    min-height: 100vh;
+  }
+}
+
+.login-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,12 +27,7 @@
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.input-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  width: 100%;
-}
+
 .website-logo {
   width: 105px;
   align-self: flex-start;
@@ -31,6 +35,7 @@
   margin-bottom: 100px;
   margin-left: 30px;
 }
+
 .heading {
   color: #ffffff;
   font-weight: 600;
@@ -39,6 +44,13 @@
   align-self: flex-start;
   font-family: 'Roboto';
 }
+@media screen and (min-width: 768px) {
+  .heading {
+    font-family: 'HK Grotesk';
+    align-self: center;
+  }
+}
+
 .input-label {
   margin-bottom: 0px;
   font-family: 'Roboto';
@@ -52,6 +64,14 @@
   line-height: 16px;
   color: #ffffff;
 }
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+
 .input-field {
   font-size: 14px;
   height: 40px;
@@ -63,6 +83,7 @@
   padding: 8px 16px 8px 16px;
   outline: none;
 }
+
 .login-btn {
   font-family: 'Roboto';
   font-weight: bold;
@@ -78,6 +99,14 @@
   outline: none;
   cursor: pointer;
 }
-.err {
-  color: #e50914;
+
+.error-msg {
+  align-self: start;
+  font-size: 12px;
+  margin-top: 3px;
+  margin-bottom: 0px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 16px;
+  color: #dc2626;
 }

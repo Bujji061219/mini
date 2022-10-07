@@ -1,12 +1,8 @@
-.acc-section {
-  background-color: #131313;
-  height: 100vh;
-}
 .account-container {
   height: 70vh;
   padding-left: 32px;
   padding-right: 32px;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
   padding-top: 32px;
   display: flex;
   flex-direction: column;
@@ -105,6 +101,8 @@
   margin-top: 24px;
   cursor: pointer;
   outline: none;
+  align-items: center;
+  margin-top: 20px;
 }
 @media (min-width: 768px) {
   .account-container {
@@ -144,4 +142,7 @@
   .logout-btn {
     margin-top: 40px;
   }
+}
+.acc-col {
+  background-color: #131313;
 }

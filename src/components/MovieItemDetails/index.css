@@ -2,6 +2,9 @@
   background-size: cover;
   min-height: 60vh;
 }
+.background {
+  background-color: #131313;
+}
 @media screen and (min-width: 768px) {
   .movie-details-home-page {
     min-height: 50vh;
@@ -157,6 +160,7 @@
   color: #ffffff;
   margin: 0;
   margin-bottom: 24px;
+  max-width: 500px;
 }
 
 .play-btn {
@@ -181,11 +185,14 @@
 }
 
 .movie-details-container {
+  display: flex;
+  justify-content: space-between;
   padding: 0px;
 }
 
 .each-info {
   margin-right: 10px;
+  color: #64748b;
 }
 
 .info-heading {
@@ -208,7 +215,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: #64748b;
 }
 
 .similar-movies-container {
@@ -223,7 +230,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 26px;
-  color: #ffffff;
+  color: black;
   margin-bottom: 16px;
 }
 

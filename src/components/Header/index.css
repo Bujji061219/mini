@@ -1,11 +1,6 @@
 .nav-container {
-  background-color: #131313;
-  padding: 5px;
-  opacity: 0.5;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  background-color: #13131360;
+  height: 100px;
 }
 
 .header-elements-container {
@@ -100,16 +95,14 @@
 .search-btn {
   background-color: transparent;
   border-width: 0;
-  padding-top: 5px;
-  margin-top: 4px;
 }
 
 .item-heading {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 10px;
-  line-height: 26px;
+  font-size: 19px;
+
   color: #ffffff;
   text-decoration: none;
 }

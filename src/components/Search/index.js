@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 
-import LoadingView from '../LoadingView'
+import LoadingView from '../Loader'
 
 import FailureView from '../FailureView'
 import MovieDetailsLink from '../MovieDetailsLink'
@@ -84,7 +84,7 @@ class Search extends Component {
   noResultsView = () => {
     const {searchInput} = this.state
     return (
-      <div className="no-result-containerr">
+      <div className="no-result-container">
         <img
           src="https://res.cloudinary.com/ddry7fpzp/image/upload/v1662999245/no_results_view_peswf2.png"
           className="no-results"
@@ -129,7 +129,7 @@ class Search extends Component {
       <>
         <div className="search-bg-container">
           <Header getSearchInput={this.getSearchInput} />
-          <div className="search-containerr">{this.renderSearchPage()}</div>
+          <div className="search-container">{this.renderSearchPage()}</div>
         </div>
       </>
     )

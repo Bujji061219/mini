@@ -15,8 +15,8 @@ const Account = props => {
 
   return (
     <>
-      <Header />
-      <div className="acc-section">
+      <div className="acc-col">
+        <Header />
         <div className="account-container">
           <h1 className="heading">Account</h1>
           <hr className="hz-line" />
@@ -29,17 +29,19 @@ const Account = props => {
             </div>
           </div>
           <hr className="hz-line" />
-
           <div className="plan-details-container">
             <p className="member-details">Plan Details</p>
             <p className="username">Premium</p>
             <p className="plan-type">Ultra HD</p>
+            <hr className="hz-line" />
+            <button
+              onClick={onClickLogout}
+              type="button"
+              className="logout-btn"
+            >
+              Logout
+            </button>
           </div>
-
-          <hr className="hz-line" />
-          <button onClick={onClickLogout} type="button" className="logout-btn">
-            Logout
-          </button>
         </div>
         <FooterSection />
       </div>

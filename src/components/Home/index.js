@@ -1,13 +1,13 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-
-import './index.css'
-
-import Header from '../Header'
+import FailureView from '../FailureView'
+import LoadingView from '../Loader'
 import TrendingNow from '../TrendingNow'
 import Originals from '../Originals'
-import LoadingView from '../LoadingView'
 import FooterSection from '../FooterSection'
+import Header from '../Header'
+
+import './index.css'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -30,6 +30,7 @@ class Home extends Component {
     this.setState({apiStatus: apiStatusConstants.inProgress})
 
     const jwtToken = Cookies.get('jwt_token')
+    console.log(jwtToken)
     const homeApi = 'https://apis.ccbp.in/movies-app/trending-movies'
     const options = {
       method: 'GET',
@@ -63,7 +64,13 @@ class Home extends Component {
     }
   }
 
-  renderLoaderView = () => <LoadingView />
+  onClickRetry = () => {
+    this.getRandomHomePagePoster()
+  }
+
+  renderFailureView = () => <FailureView onClickRetry={this.onClickRetry} />
+
+  renderLoadingView = () => <LoadingView />
 
   renderSuccessView = () => {
     const {randomHomePagePoster} = this.state
@@ -79,7 +86,7 @@ class Home extends Component {
         <div className="home-page-movie-container">
           <h1 className="movie-title">{title}</h1>
           <h1 className="over-view">{overview}</h1>
-          <button type="button" className="play-btn">
+          <button type="button" className="play-btn" testid="searchButton">
             Play
           </button>
         </div>
@@ -87,15 +94,16 @@ class Home extends Component {
     )
   }
 
-  renderhomePage = () => {
+  renderHomePage = () => {
     const {apiStatus} = this.state
 
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderSuccessView()
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
       case apiStatusConstants.inProgress:
-        return this.renderLoaderView()
-
+        return this.renderLoadingView()
       default:
         return null
     }
@@ -105,11 +113,10 @@ class Home extends Component {
     return (
       <>
         <div className="bg-container">
-          {this.renderhomePage()}
-
-          <h1 className="side-heading">Trending Now</h1>
+          {this.renderHomePage()}
+          <h1 className="side-headings">Trending Now</h1>
           <TrendingNow />
-          <h1 className="side-heading">Originals</h1>
+          <h1 className="side-headings">Originals</h1>
           <Originals />
           <FooterSection />
         </div>
@@ -117,4 +124,5 @@ class Home extends Component {
     )
   }
 }
+
 export default Home

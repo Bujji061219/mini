@@ -1,12 +1,11 @@
-.search-bg-containerr {
+.search-bg-container {
   background-color: #131313;
   min-height: 100vh;
 }
 
-.search-containerr {
+.search-container {
   padding-left: 32px;
   padding-right: 19px;
-  min-height: 90vh;
 }
 .search-list {
   margin: 0;

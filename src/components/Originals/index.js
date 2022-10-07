@@ -4,7 +4,7 @@ import ReactSlick from '../ReactSlick'
 import FailureView from '../FailureView'
 
 import './index.css'
-import LoadingView from '../LoadingView'
+import LoadingView from '../Loader'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -26,6 +26,7 @@ class Originals extends Component {
   getOriginalsMovies = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
+    console.log(jwtToken)
     const originalsMoviesApi = 'https://apis.ccbp.in/movies-app/originals'
     const options = {
       method: 'GET',
@@ -34,10 +35,10 @@ class Originals extends Component {
       },
     }
     const response = await fetch(originalsMoviesApi, options)
-    console.log(response)
+
     if (response.ok === true) {
       const fetchedData = await response.json()
-      console.log(fetchedData)
+
       const updatedData = fetchedData.results.map(eachMovie => ({
         id: eachMovie.id,
         posterPath: eachMovie.poster_path,

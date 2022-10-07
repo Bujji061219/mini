@@ -1,9 +1,10 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import ReactSlick from '../ReactSlick'
-import LoadingView from '../LoadingView'
+import FailureView from '../FailureView'
 
 import './index.css'
+import LoadingView from '../Loader'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -33,10 +34,10 @@ class TrendingNow extends Component {
       },
     }
     const response = await fetch(trendingMoviesApi, options)
-    console.log(response)
+
     if (response.ok === true) {
       const fetchedData = await response.json()
-      console.log(fetchedData)
+
       const updatedData = fetchedData.results.map(eachMovie => ({
         id: eachMovie.id,
         posterPath: eachMovie.poster_path,
@@ -57,6 +58,8 @@ class TrendingNow extends Component {
     this.getTrendingNowMovies()
   }
 
+  renderFailureView = () => <FailureView onClickRetry={this.onClickRetry} />
+
   renderLoadingView = () => <LoadingView />
 
   renderSuccessView = () => {
@@ -71,6 +74,10 @@ class TrendingNow extends Component {
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderSuccessView()
+
+      case apiStatusConstants.failure:
+        return this.renderFailureView()
+
       case apiStatusConstants.inProgress:
         return this.renderLoadingView()
 

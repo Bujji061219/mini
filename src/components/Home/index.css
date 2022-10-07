@@ -2,9 +2,45 @@ body {
   margin: 0px;
   box-sizing: border-box;
 }
+
 .bg-container {
-  background-color: black;
+  background-color: #131313;
 }
+
+.side-heading {
+  font-family: 'HK Grotesk';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+  margin: 0;
+  margin-top: 12px;
+  margin-left: 32px;
+}
+
+.home-page {
+  background-size: cover;
+  min-height: 60vh;
+}
+
+.home-page-movie-container {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 70vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(24, 24, 24, 0.546875) 38.26%,
+    #131313 92.82%,
+    #131313 98.68%,
+    #131313 108.61%
+  );
+}
+
 .movie-title {
   font-family: 'Roboto';
   font-style: normal;
@@ -15,6 +51,7 @@ body {
   margin: 0px;
   margin-bottom: 8px;
 }
+
 .over-view {
   font-family: 'Roboto';
   font-style: normal;
@@ -25,6 +62,7 @@ body {
   margin: 0;
   margin-bottom: 24px;
 }
+
 .play-btn {
   padding: 8px 24px;
   width: 76px;
@@ -38,33 +76,11 @@ body {
   line-height: 16px;
   color: #171f46;
   border: none;
-  cursor: pointer;
 }
-.home-page {
-  background-size: cover;
-  min-height: 60vh;
-}
-.home-page-movie-container {
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-bottom: 32px;
-  padding-top: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  max-height: 50vh;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(24, 24, 24, 0.546875) 38.26%,
-    #131313 92.82%,
-    #131313 98.68%,
-    #131313 108.61%
-  );
-}
+
 @media (min-width: 768px) {
   .home-page {
-    height: 60vh;
+    max-height: 70vh;
     margin-bottom: 48px;
   }
   .home-page-movie-container {
@@ -74,13 +90,11 @@ body {
   }
 
   .movie-title {
-    font-size: 45px;
-    line-height: 62px;
-    padding-bottom: 24px;
+    font-size: 24px;
   }
   .over-view {
     font-size: 20px;
-    line-height: 26px;
+
     width: 443px;
     margin-bottom: 32px;
   }
@@ -90,7 +104,7 @@ body {
     border-radius: 4px;
   }
 
-  .side-heading {
+  .side-headings {
     color: #ffffff;
     font-size: 24px;
     line-height: 31px;
@@ -98,8 +112,4 @@ body {
     margin-left: 135px;
     margin-bottom: 24px;
   }
-}
-.bottom-sec {
-  background-color: #131313;
-  margin-top: 0px;
 }

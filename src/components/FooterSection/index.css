@@ -10,7 +10,7 @@
   align-items: center;
   margin-top: 30px;
   padding: 30px;
-  background-color: black;
+  background-color: transparent;
 }
 
 .icon-button {
@@ -38,4 +38,5 @@
 }
 .icons {
   color: white;
+  margin-right: 13px;
 }

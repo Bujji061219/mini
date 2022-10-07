@@ -1,11 +1,13 @@
 import {Component} from 'react'
+import {FaGoogle} from 'react-icons/fa'
 
 import Cookies from 'js-cookie'
 
-import FailureView from '../FailureView'
 import FooterSection from '../FooterSection'
 
-import LoadingView from '../LoadingView'
+import FailureView from '../FailureView'
+
+import LoadingView from '../Loader'
 
 import MovieDetailsLink from '../MovieDetailsLink'
 import Header from '../Header'
@@ -33,6 +35,7 @@ class Popular extends Component {
       apiStatus: apiStatusConstants.inProgress,
     })
     const jwtToken = Cookies.get('jwt_token')
+
     const popularMoviesApi = 'https://apis.ccbp.in/movies-app/popular-movies'
     const options = {
       method: 'GET',
@@ -72,14 +75,12 @@ class Popular extends Component {
     const {popularMoviesList} = this.state
     return (
       <>
-        <div className="pop-container">
-          <ul className="popular-list">
-            {popularMoviesList.map(eachMovie => (
-              <MovieDetailsLink movieDetails={eachMovie} key={eachMovie.id} />
-            ))}
-          </ul>
-          <FooterSection />
-        </div>
+        <ul className="popular-list">
+          {popularMoviesList.map(eachMovie => (
+            <MovieDetailsLink movieDetails={eachMovie} key={eachMovie.id} />
+          ))}
+        </ul>
+        <FooterSection />
       </>
     )
   }
@@ -102,7 +103,7 @@ class Popular extends Component {
 
   render() {
     return (
-      <div>
+      <div className="background">
         <Header />
         {this.renderPopularPageView()}
       </div>

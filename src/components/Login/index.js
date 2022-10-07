@@ -1,5 +1,7 @@
 import {Component} from 'react'
+
 import {Redirect} from 'react-router-dom'
+
 import Cookies from 'js-cookie'
 
 import './index.css'
@@ -51,7 +53,7 @@ class Login extends Component {
     }
     const response = await fetch(loginUrlApi, options)
     const fetchedData = await response.json()
-    console.log(response)
+
     if (response.ok === true) {
       this.onLoginSuccess(fetchedData.jwt_token)
     } else {

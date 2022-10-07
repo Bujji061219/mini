@@ -9,11 +9,7 @@ const MovieDetailsLink = props => {
   return (
     <Link to={`/movies/${id}`}>
       <li>
-        <img
-          src="https://res.cloudinary.com/ddry7fpzp/image/upload/v1662296727/Movies_Logo_vr3wvf.png"
-          alt={title}
-          className="popular-img"
-        />
+        <img src={posterPath} alt={title} className="popular-img" />
       </li>
     </Link>
   )
